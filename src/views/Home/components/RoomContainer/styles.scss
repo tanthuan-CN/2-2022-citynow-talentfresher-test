@@ -1,0 +1,15 @@
+.room-container {
+  width: 95%;
+  padding-left: 5px;
+  overflow: hidden;
+  .room-header {
+    display: flex;
+    .room-id {
+      margin-right: 50px;
+      font-weight: bold;
+    }
+  }
+  .room-rent-name {
+    white-space: nowrap;
+  }
+}

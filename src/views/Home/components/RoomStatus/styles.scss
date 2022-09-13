@@ -1,0 +1,16 @@
+.room-status-container {
+  display: flex;
+  .room-status-color {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+  }
+  .room-status-status {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    color: #fff;
+  }
+}
