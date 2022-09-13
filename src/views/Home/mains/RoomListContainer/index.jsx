@@ -2,12 +2,10 @@
 import React from "react";
 // components
 import RoomContainer from "../../components/RoomContainer";
-// mocks
-import { roomData } from "@/mocks";
 // styles
 import "./styles.scss";
 
-const RoomListContainer = () => (
+const RoomListContainer = ({ roomData }) => (
   <div className="room-list-container">
     {roomData.map((room) => (
       <RoomContainer key={room.id} {...room} />

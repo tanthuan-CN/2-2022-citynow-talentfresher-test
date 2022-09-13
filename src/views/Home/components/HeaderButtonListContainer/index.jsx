@@ -5,8 +5,8 @@ import HeaderButton from "../HeaderButton";
 import "./styles.scss";
 
 const listButtons = [
-  { id: 1, keyButton: "F1", label: "▼" },
-  { id: 2, keyButton: "F3", label: "▲" },
+  { id: 1, keyButton: "F1", label: "▼", type: "increasePage" },
+  { id: 2, keyButton: "F3", label: "▲", type: "decreasePage" },
   { id: 3, keyButton: "F4", label: "Hide Checkout" },
   { id: 4, keyButton: "F5", label: "Refresh" },
   { id: 6, keyButton: "F12", label: "VI" }
