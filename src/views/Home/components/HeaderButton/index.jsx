@@ -8,7 +8,6 @@ import "./styles.scss";
 const HeaderButton = ({ keyButton, label, type }) => {
   const page = useContext(PageContext);
   const handleButtonClick = () => {
-    alert("123");
     if (type === "increasePage" && page.pageNumber !== 2) {
       page.setPageNumber(page.pageNumber + 1);
     } else if (type === "decreasePage" && page.pageNumber !== 0) {
