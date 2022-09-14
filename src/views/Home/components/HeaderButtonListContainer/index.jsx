@@ -1,23 +1,29 @@
 // libs
-import React from "react";
+import React, { useContext, useState } from "react";
 import HeaderButton from "../HeaderButton";
+// context
+import { LocaleContext } from "@/contexts";
 // style
 import "./styles.scss";
 
-const listButtons = [
-  { id: 1, keyButton: "F1", label: "▼", type: "increasePage" },
-  { id: 2, keyButton: "F3", label: "▲", type: "decreasePage" },
-  { id: 3, keyButton: "F4", label: "Hide Checkout" },
-  { id: 4, keyButton: "F5", label: "Refresh" },
-  { id: 6, keyButton: "F12", label: "VI" }
-];
-
-const HeaderButtonListContainer = () => (
-  <div className="header-button-list-container">
-    {listButtons.map((button) => (
-      <HeaderButton key={button.id} {...button} />
-    ))}
-  </div>
-);
+const HeaderButtonListContainer = () => {
+  // locale
+  const locale = useContext(LocaleContext);
+  const listButtons = locale.locale.headerButton;
+  // selected button
+  const [selectedButton, setSelectedButton] = useState({});
+  return (
+    <div className="header-button-list-container">
+      {listButtons.map((button) => (
+        <HeaderButton
+          key={button.id}
+          selectedButton={selectedButton}
+          setSelectedButton={setSelectedButton}
+          {...button}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default HeaderButtonListContainer;

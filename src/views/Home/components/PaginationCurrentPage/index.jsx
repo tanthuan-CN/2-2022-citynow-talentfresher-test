@@ -1,7 +1,7 @@
 // libs
 import React, { useContext } from "react";
 // context
-import PageContext from "@/contexts";
+import { PageContext } from "@/contexts";
 // style
 import "./styles.scss";
 

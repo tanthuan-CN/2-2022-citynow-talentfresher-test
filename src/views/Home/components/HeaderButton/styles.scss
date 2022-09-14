@@ -2,7 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
+  outline: none;
+  border: 1px solid transparent;
+  width: 170px;
   height: 150px;
   background-color: #fff;
   color: #000;
@@ -11,4 +13,8 @@
     margin-bottom: 10px;
     text-align: center;
   }
+}
+.active {
+  border: 1px solid blue;
+  color: blue;
 }
