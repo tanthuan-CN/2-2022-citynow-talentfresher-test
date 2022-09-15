@@ -20,7 +20,7 @@
     "react/jsx-one-expression-per-line": 0,
     "generator-star-spacing": 0,
     "function-paren-newline": 0,
-    "import/no-unresolved": [2, { "ignore": ["^@/", "^umi/", "environments"] }],
+    // "import/no-unresolved": [2, { "ignore": ["^@/", "^umi/", "environments"] }],
     "import/no-extraneous-dependencies": [
       2,
       {
@@ -75,6 +75,9 @@
     "no-shadow": "off",
     "import/extensions": ["error", "never"],
     "import/order": 0,
-    "eslint-comments/no-unlimited-disable": "off"
+    "eslint-comments/no-unlimited-disable": "off",
+    "import/no-unresolved": "off",
+    "jsx-a11y/no-noninteractive-tabindex": "off",
+    "jsx-a11y/no-autofocus": "off"
   }
 }
