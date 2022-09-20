@@ -37,19 +37,20 @@ const Home = () => {
 
   const handleKeyBoard = (e) => {
     e.preventDefault();
-    if (e.code === "F1" && pageNumber > 0) {
+    const code = e.code || e.key;
+    if (code === "F1" && pageNumber > 0) {
       setPageNumber(pageNumber - 1);
-    } else if (e.code === "F3" && pageNumber < 2) {
+    } else if (code === "F3" && pageNumber < 2) {
       setPageNumber(pageNumber + 1);
-    } else if (e.code === "F4") {
+    } else if (code === "F4") {
       setIsCheckout(!isCheckout);
-    } else if (e.code === "F5") {
+    } else if (code === "F5") {
       const newRoomsData = [...roomsData];
       for (let i = 0; i < newRoomsData.length; i += 1) {
         newRoomsData[i].status = arrStatus[Math.floor(Math.random() * 4)];
       }
       setRoomsData(newRoomsData);
-    } else if (e.code === "F12") {
+    } else if (code === "F12") {
       const newLocale =
         locale.headerButton[4].label === "VI" ? locales.vi : locales.en;
       setLocale(newLocale);

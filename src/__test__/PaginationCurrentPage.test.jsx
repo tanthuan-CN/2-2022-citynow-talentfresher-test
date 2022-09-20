@@ -9,12 +9,16 @@ import { PageProvider } from "@/contexts";
 
 describe("Pagination Current Page component test", () => {
   it("renders Pagination Current Page", () => {
+    // Arrange
+    const pageNumber = 0;
+    const pageText = "PAGE: 1/3";
+    // Action
     render(
-      <PageProvider value={{ pageNumber: 0 }}>
+      <PageProvider value={{ pageNumber }}>
         <PaginationCurrentPage />
       </PageProvider>
     );
-
-    expect(screen.getByText("PAGE: 1/3")).toBeInTheDocument();
+    // Assert
+    expect(screen.getByText(pageText)).toBeInTheDocument();
   });
 });

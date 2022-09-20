@@ -8,54 +8,62 @@ import { CheckoutProvider } from "@/contexts";
 import RoomContainer from "@/views/Home/components/RoomContainer";
 
 describe("Roomcontainer component test", () => {
+  // Varibles
+  const roomNo = "1200";
+  const status = "ALREADY_OUT";
+  const isCheckout = false;
+  const roomType = "ABC";
+  const personName = "Nhan";
+  const night = 10;
   it("Test render status", () => {
+    // Action
     render(
-      <CheckoutProvider value={{ isCheckout: false }}>
-        <RoomContainer roomNo="1200" status="ALREADY_OUT" />
+      <CheckoutProvider value={{ isCheckout }}>
+        <RoomContainer roomNo={roomNo} status={status} />
       </CheckoutProvider>
     );
-
-    expect(screen.getByText("1200")).toBeInTheDocument();
+    // Assert
+    expect(screen.getByText(roomNo)).toBeInTheDocument();
   });
 
   it("Test render roomType", () => {
+    // Action
     render(
-      <CheckoutProvider value={{ isCheckout: false }}>
-        <RoomContainer roomType="ABC" status="ALREADY_OUT" />
+      <CheckoutProvider value={{ isCheckout }}>
+        <RoomContainer roomType={roomType} status={status} />
       </CheckoutProvider>
     );
-
-    expect(screen.getByText("ABC")).toBeInTheDocument();
+    // Assert
+    expect(screen.getByText(roomType)).toBeInTheDocument();
   });
 
   it("Test render personName", () => {
+    // Action
     render(
-      <CheckoutProvider value={{ isCheckout: false }}>
-        <RoomContainer personName="Nhan" status="ALREADY_OUT" />
+      <CheckoutProvider value={{ isCheckout }}>
+        <RoomContainer personName={personName} status={status} />
       </CheckoutProvider>
     );
-
-    expect(screen.getByText("Nhan")).toBeInTheDocument();
+    // Assert
+    expect(screen.getByText(personName)).toBeInTheDocument();
   });
 
   it("Test render night", () => {
+    // Action
     render(
       <CheckoutProvider value={{ isCheckout: false }}>
-        <RoomContainer night="10" status="ALREADY_OUT" />
+        <RoomContainer night={night} status="ALREADY_OUT" />
       </CheckoutProvider>
     );
-
-    expect(screen.getByText("10")).toBeInTheDocument();
+    // Assert
+    expect(screen.getByText(night)).toBeInTheDocument();
   });
 
   it("Test render status color", () => {
-    const { container } = render(
-      <CheckoutProvider value={{ isCheckout: false }}>
-        <RoomContainer status="ALREADY_OUT" />
-      </CheckoutProvider>
-    );
-    const element = container.getElementsByClassName("room-container")[0];
+    // Arrange
     // convert rgba to hex
+    const roomContainer = "room-container";
+    const resultBackgroundColor = "#b79a5b";
     const rgba2hex = (rgba) =>
       `#${rgba
         .match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+\.{0,1}\d*))?\)$/)
@@ -67,9 +75,16 @@ describe("Roomcontainer component test", () => {
             .replace("NaN", "")
         )
         .join("")}`;
+    // Action
+    const { container } = render(
+      <CheckoutProvider value={{ isCheckout }}>
+        <RoomContainer status={status} />
+      </CheckoutProvider>
+    );
+    const element = container.getElementsByClassName(roomContainer)[0];
     const styles = getComputedStyle(element);
-
     const backgroundColor = rgba2hex(styles.backgroundColor);
-    expect(backgroundColor).toBe("#b79a5b");
+    // Assert
+    expect(backgroundColor).toBe(resultBackgroundColor);
   });
 });

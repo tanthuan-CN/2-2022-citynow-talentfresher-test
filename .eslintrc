@@ -4,7 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb", "prettier"],
+  "extends": ["airbnb", "prettier", "plugin:cypress/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -12,7 +12,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["eslint-comments", "react-hooks"],
+  "plugins": ["eslint-comments", "react-hooks", "cypress"],
   "rules": {
     "react/jsx-wrap-multilines": 0,
     "react/prop-types": 0,

@@ -6,21 +6,27 @@ import "@testing-library/jest-dom";
 import HeaderButton from "@/views/Home/components/HeaderButton";
 
 describe("HeaderButton component test", () => {
+  // varibles
+  const label = "Hide checkout";
+  const selectedButton = "Hide checkout";
+  const keyButton = "F1";
   it("Test HeaderButton render label", () => {
-    render(<HeaderButton label="Hide checkout" selectedButton="F1" />);
-
-    expect(screen.getByText("Hide checkout")).toBeInTheDocument();
+    // Action
+    render(<HeaderButton label={label} selectedButton={selectedButton} />);
+    // Assert
+    expect(screen.getByText(label)).toBeInTheDocument();
   });
 
   it("Test HeaderButton active classname", () => {
+    // Action
     const { container } = render(
       <HeaderButton
-        keyButton="F1"
-        label="Hide checkout"
-        selectedButton="Hide checkout"
+        keyButton={keyButton}
+        label={label}
+        selectedButton={selectedButton}
       />
     );
-
+    // Assert
     expect(container.getElementsByClassName("active").length).toBe(1);
   });
 });

@@ -6,19 +6,25 @@ import "@testing-library/jest-dom";
 import RoomStatus from "@/views/Home/components/RoomStatus";
 
 describe("Room status component test", () => {
+  // Varibles
+  const backGroundColor = "blue";
+  const status = "this is a status";
+  const roomStatusColor = "room-status-color";
   it("Test status of Room Status component", () => {
-    render(<RoomStatus backGroundColor="blue" status="test" />);
-
-    expect(screen.getByText("test")).toBeInTheDocument();
+    // Action
+    render(<RoomStatus backGroundColor={backGroundColor} status={status} />);
+    // Assert
+    expect(screen.getByText(status)).toBeInTheDocument();
   });
 
   it("Test background color of Room Status component", () => {
+    // Action
     const { container } = render(
-      <RoomStatus backGroundColor="blue" status="test" />
+      <RoomStatus backGroundColor={backGroundColor} status={status} />
     );
-    const element = container.getElementsByClassName("room-status-color")[0];
+    const element = container.getElementsByClassName(roomStatusColor)[0];
     const styles = getComputedStyle(element);
-
-    expect(styles.backgroundColor).toBe("blue");
+    // Assert
+    expect(styles.backgroundColor).toBe(backGroundColor);
   });
 });

@@ -8,7 +8,9 @@ import "./styles.scss";
 const PaginationCurrentPage = () => {
   const page = useContext(PageContext);
   return (
-    <div className="pagination-current-page">PAGE: {page.pageNumber + 1}/3</div>
+    <div className="pagination-current-page" data-cy="current-page">
+      PAGE: {page.pageNumber + 1}/3
+    </div>
   );
 };
 

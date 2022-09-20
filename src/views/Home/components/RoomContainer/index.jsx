@@ -22,6 +22,7 @@ const RoomContainer = ({ roomNo, roomType, personName, night, status }) => {
         visibility:
           status === "ALREADY_OUT" && checkout.isCheckout ? "hidden" : "visible"
       }}
+      data-cy="room-container"
     >
       <div className="room-header">
         <div className="room-id">{roomNo}</div>
