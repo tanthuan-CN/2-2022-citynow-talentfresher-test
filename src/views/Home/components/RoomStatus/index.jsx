@@ -4,7 +4,7 @@ import React from "react";
 import "./styles.scss";
 
 const RoomStatus = ({ backGroundColor, status }) => (
-  <div className="room-status-container">
+  <div className="room-status-container" data-cy="room-status">
     <div
       className="room-status-color"
       style={{ backgroundColor: backGroundColor }}
